@@ -16,7 +16,7 @@ class articleWriter:
             self.language = OPENAI['lang']
 
     def openai_text(self,system_prompt,user_prompt,max_tokens):
-        openai.api_key = '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'
+        openai.api_key = self.key
         system_prompt = system_prompt + '. Remains in max ' + str(max_tokens) + 'chars while answering'
         text_response = openai.ChatCompletion.create(
             model="gpt-4",
